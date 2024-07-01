@@ -10,15 +10,15 @@ using namespace std;
 //roibr23@gmail.com 322695883
 
 int main() {
-    Player p1("Amit");
-    Player p2("Yossi");
-    Player p3("Dana");
+    Player p1("Roi");
+    Player p2("Aviv");
+        Player p3("Sapir");
     Catan catan(p1, p2, p3);
     catan.ChooseStartingPlayer();
     Board& board = catan.getBoard();
 
     vector<string> places = {"Forest", "Hills"};
-    vector<int> placesNum = {1, 2}; // Ensure positions are within range 0-5
+    vector<int> placesNum = {1, 2};
     p1.placeSettlement(places, placesNum, board);
     p1.placeRoad(places, placesNum, board);
 
@@ -53,27 +53,27 @@ int main() {
     p3.placeSettlement(places, placesNum, board);
     p3.placeRoad(places, placesNum, board);
 
-    p1.rollDice(board);  // Changed to pass the board reference
+    p1.rollDice(board);
     try {
-        p1.placeRoad({"Forest", "Hills"}, {1, 3}, board);  // Ensure unique positions
+        p1.placeRoad({"Forest", "Hills"}, {1, 3}, board);
     } catch (const std::exception &e) {
         cout << e.what() << endl;
     }
     p1.endTurn();
 
-    p2.rollDice(board);  // Changed to pass the board reference
+    p2.rollDice(board);
     p2.endTurn();
 
-    p3.rollDice(board);  // Changed to pass the board reference
+    p3.rollDice(board);
     p3.endTurn();
 
     try {
-        p2.rollDice(board);  // Changed to pass the board reference
+        p2.rollDice(board);
     } catch (const std::exception &e) {
         cout << e.what() << endl;
     }
 
-    p1.rollDice(board);  // Changed to pass the board reference
+    p1.rollDice(board);
     try {
         p1.trade(p2, "wood", "brick", 1, 1);
     } catch (const std::exception &e) {
@@ -81,7 +81,7 @@ int main() {
     }
     p1.endTurn();
 
-    p2.rollDice(board);  // Changed to pass the board reference
+    p2.rollDice(board);
     try {
         p2.buyDevelopmentCard();
     } catch (const std::exception &e) {
