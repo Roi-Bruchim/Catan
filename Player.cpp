@@ -49,7 +49,7 @@ void Player::trade(Player& other, const std::string& giveResource, const std::st
         other.resources[giveResource] += giveAmount;
         std::cout << name << " traded " << giveAmount << " " << giveResource << " for " << receiveAmount << " " << receiveResource << " with " << other.getName() << std::endl;
     } else {
-        std::cout << "Trade not possible due to insufficient resources." << std::endl;
+        throw std::invalid_argument("Trade not possible due to insufficient resources.");
     }
 }
 
@@ -92,7 +92,7 @@ void Player::removeResource(const std::string& resource, int amount) {
     if (resources[resource] >= amount) {
         resources[resource] -= amount;
     } else {
-        std::cout << "Not enough " << resource << " to remove." << std::endl;
+        throw std::invalid_argument("Not enough " + resource + " to remove.");
     }
 }
 
@@ -102,4 +102,12 @@ std::string Player::getName() const {
 
 int Player::getPoints() const {
     return points;
+}
+
+const std::map<std::string, int>& Player::getResources() const {
+    return resources;
+}
+
+void Player::setPoints(int pts) {
+    points = pts;
 }
