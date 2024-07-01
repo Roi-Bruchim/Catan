@@ -9,7 +9,7 @@
 class KnightCard : public Card {
 public:
     void play() override {
-        std::cout << "Knight card played: Move the robber and steal a resource from another player." << std::endl;
+        std::cout << "Knight card" << std::endl;
     }
 };
 
