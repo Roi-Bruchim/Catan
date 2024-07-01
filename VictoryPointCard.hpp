@@ -9,7 +9,7 @@
 class VictoryPointCard : public Card {
 public:
     void play() override {
-        std::cout << "Victory point card played: Gain a victory point." << std::endl;
+        std::cout << "Victory point card" << std::endl;
     }
 };
 
