@@ -10,7 +10,7 @@
 
 //roibr23@gmail.com 322695883
 
-class Board; // Forward declaration
+class Board; 
 
 class Player {
 public:
@@ -28,6 +28,8 @@ public:
     void removeResource(const std::string& resource, int amount);
     std::string getName() const;
     int getPoints() const;
+    const std::map<std::string, int>& getResources() const;
+    void setPoints(int pts);
 
 private:
     std::string name;
