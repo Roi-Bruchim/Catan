@@ -3,9 +3,9 @@
 
 //roibr23@gmail.com 322695883
 
-#include <cstddef> // For nullptr
+#include <cstddef> 
 
-class Player; // Forward declaration
+class Player; 
 
 class Settlement {
 public:
