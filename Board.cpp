@@ -131,4 +131,3 @@ void Board::distributeResources(int roll, Player& currentPlayer) {
 bool Board::isSettlementPlaceable(const std::string& hex, int position) const {
     return tiles.at(hex).getSettlements()[position]->getOwner() == nullptr;
 }
-
